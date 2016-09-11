@@ -1,0 +1,31 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "test project",
+  "main": "index.jade",
+  "scripts": {
+    "test": "no unit test provided"
+  },
+  "repository": {
+    "type": "git",
+    "url": "no git repository provided"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Ediyono",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.14.0",
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-shell-spawn": "^0.3.10",
+    "grunt-ts": "^6.0.0-beta.3",
+    "load-grunt-tasks": "^3.5.2",
+    "typescript": "^1.8.10"
+  }
+}

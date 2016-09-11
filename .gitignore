@@ -1,0 +1,7 @@
+debug
+release
+node_modules
+typings
+.tscache
+*.tmp.txt
+*.js.map
