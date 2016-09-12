@@ -1,0 +1,21 @@
+{
+	"development" :
+	{
+		"port" : "8080",
+		"key" : "d108a5ec8d1a4f27",
+		"database" :
+		{
+			"username" : "ediyono",
+			"password" : "ediyono",
+			"host" : "ds029446.mlab.com:29446",
+			"db_name" : "weather_cache"
+		},
+		"log_path" : "log"
+	},
+
+	"production" : 
+	{
+		"port" : "8080",
+		"key" : "d108a5ec8d1a4f27"
+	}		
+}

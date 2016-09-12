@@ -26,12 +26,22 @@ module.exports = function (grunt) {
                         expand: true
                     }
                 ]
+            },
+            views: {
+                files: [
+                    {
+                        cwd: 'src',
+                        src: ['./views/**/*.*'],
+                        dest: './debug/',
+                        expand: true
+                    }
+                ]
             }
         },
         // start node js server
         shell: {
             debugNode: {
-                command: 'node ./debug/main.js',
+                command: 'node ./debug/app.js',
                 options: {
                     async: true
                 }
@@ -42,7 +52,21 @@ module.exports = function (grunt) {
         watch: {
             ts: {
                 files: ['src/**/*.ts', '!node_modules/**'],
-                tasks: ['shell:debugNode:kill','ts', 'shell:debugNode'],
+                tasks: ['shell:debugNode:kill','ts','shell:debugNode'],
+                options: {
+                    spawn: false
+                }
+            },
+            views: {
+                files: ['src/views/*'],
+                tasks: ['copy:views'],
+                options: {
+                    spawn: false
+                }
+            },
+            config: {
+                files: ['src/config/*.*'],
+                tasks: ['shell:debugNode:kill','copy:config','shell:debugNode'],
                 options: {
                     spawn: false
                 }
@@ -53,6 +77,7 @@ module.exports = function (grunt) {
     grunt.registerTask('debug', [
         'ts',
         'copy:config',
+        'copy:views',
         'shell:debugNode',
         'watch'
     ]);

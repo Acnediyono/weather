@@ -1,0 +1,16 @@
+table thead tr th {
+	text-align: center;
+}
+
+table tbody tr td {
+	vertical-align: middle;
+}
+
+table tbody tr td {
+	text-align: center;
+}
+
+.weather-icon {
+	width:5%;
+	height:10px;
+}
