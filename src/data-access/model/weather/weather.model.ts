@@ -6,7 +6,7 @@ export class Weather implements IModel {
 	private v_weather: string;
 	private v_temp_f: number;//in celcius
 	private v_temp_c: number;//in farenheit
-	private v_observation_time: number;
+	private v_observation_time: string;
 	private v_humidity: number;
 	private v_icon_url: string;
 	private v_date: string;
@@ -26,7 +26,9 @@ export class Weather implements IModel {
 	public set weather(p_weather: string) {this.v_weather = p_weather}
 	public set tempF(p_temp_f: number) {this.v_temp_f = p_temp_f}
 	public set tempC(p_temp_c: number) {this.v_temp_c = p_temp_c}
-	public set observationTime(p_observation_time: number) {this.v_observation_time = p_observation_time}
+	public set observationTime(p_observation_time: string) {
+		this.v_observation_time = new Date(parseInt(p_observation_time) * 1000).toDateString() + ' ' + new Date(parseInt(p_observation_time) * 1000).toTimeString()
+	}
 	public set humidity(p_humidity: number) {this.v_humidity = p_humidity}
 	public set iconUrl(p_icon_url: string) {this.v_icon_url = p_icon_url}
 	public set date(p_date: string) {this.v_date = p_date}

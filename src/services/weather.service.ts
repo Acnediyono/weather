@@ -37,8 +37,7 @@ export class WeatherService {
 						v_weather_info.iconUrl = v_response.icon_url;
 						v_weather_info.weather = v_response.weather;
 					}catch(p_err) {
-						console.log('Error occured while request : ' + v_url);
-						console.log('Error : ' + p_err);
+						Logger.log('Error occured while request : ' + v_url + ' Error : ' + p_err);
 					}
 					p_resolve(v_weather_info);
 				}else {

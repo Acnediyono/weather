@@ -7,6 +7,7 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
         // compiling typescript
         ts: {
             default: {
@@ -15,6 +16,7 @@ module.exports = function (grunt) {
                 tsconfig: true
             }
         },
+
         // copy configuration
         copy: {
             config: {
@@ -38,6 +40,7 @@ module.exports = function (grunt) {
                 ]
             }
         },
+
         // start node js server
         shell: {
             debugNode: {
@@ -71,10 +74,17 @@ module.exports = function (grunt) {
                     spawn: false
                 }
             }
+        },
+
+        //clean
+        clean: {
+            options: {force: true},
+            debug: ['./debug/']
         }
     });
 
     grunt.registerTask('debug', [
+        'clean:debug',
         'ts',
         'copy:config',
         'copy:views',
