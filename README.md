@@ -5,7 +5,7 @@
 
 ## Installation : 
 1. Install grunt cli `npm install -g grunt-cli`
-2. Install typings `npm install typings`
+2. Install typings `npm install typings@0.8.1`
 3. Run `npm install`
 4. Run `typings install`
 
